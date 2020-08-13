@@ -1,12 +1,31 @@
 const mysql = require('mysql');
 const pool      =    mysql.createPool({
     connectionLimit : 20,
-    host     : 'Host',
+    host     : 'host',
     user     : 'admin',
     password : 'July2020',
     database : 'test1',
-    debug    :  false
-    
+    debug    :  false,
+    acquireTimeout:3000,
+    // charset:"utf_8_general_ci",
+    connectTimeout:3000,
+    flags:['flag_1'],
+    port:3306,
+    timeout:3000,
+    bigNumberStrings:true,
+    dateStrings:"DATETIME",
+    waitForConnections:true,
+    trace:true,
+    supportBigNumbers:true,
+    insecureAuth:false,
+    multipleStatements:false,
+    queueLimit:10,
+    stringifyObjects:true,
+    // typeCast:true,
+    // socketPath:""
+    // ssl:"",
+    timezone:"local",
+    // localAddress:"",
 });    
 
 const createTable=()=>{
